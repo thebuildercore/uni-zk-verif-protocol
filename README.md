@@ -1,8 +1,8 @@
-# uni-zk-verif-protocol
 
-CARDANO For Enterprises - Universal ZK Verification Protocol for Enterprise 
+
+#CARDANO For Enterprises - Universal ZK Verification Protocol for Enterprise 
 Operations 
- 
+---
 An enterprise-focused ZK-powered verification protocol that lets companies prove internal 
 conditions or compliance without revealing raw or sensitive data. 
 “Verify compliance, eligibility, or authenticity — not reveal your data.” 
