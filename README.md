@@ -31,10 +31,52 @@ documents.
 ○ ZK proves “yes, valid certification,” but not certificate details. 
 3. Financial Threshold Validation 
 ○ A company proves its liquidity or sales exceeds a minimum for bidding, 
-without revealing actual numbers. 
+without revealing actual numbers.
 ○ Range proof ensures “> $10M revenue,” no data leak. 
-4. Internal Performance Reviews or Rewards Managers verify performance criteria 
+5. Internal Performance Reviews or Rewards Managers verify performance criteria 
 met without seeing raw feedback or personal data. 
-5. Audit Trail with Privacy 
+6. Audit Trail with Privacy 
 ○ Regulatory verifications or internal audits done privately, with public 
-verification of proof only. 
+verification of proof only.
+
+
++------------------------------------------------------------------------------------------------+
+| UNIVERSAL ZK VERIFIER: ARCHITECTURE, WIREFRAME & MOCK FLOW                                     |
++------------------------------------------------------------------------------------------------+
+
+I. PROVER SIDE (OFF-CHAIN)                                              II. VERIFIER SIDE (ON-CHAIN)
+------------------------------------------------------------------------------------------------
+                                                                                
+┌───────────────────────────┐      [PRIVATE DATA STREAM]      ┌───────────────────────────────────┐
+│ A. ENTERPRISE DATA SOURCES │      (Local Access Only)       │ C. ZK PROVER MODULE (SDK/API)     │
+│ (Finance, ESG, KYC Systems)│─────────────────────────────▶│ (Runs ZK Circuit)                 │
+└───────────────────────────┘                              └───────────────────────────────────┘
+       │                                                                  │
+       │ [MOCK INPUT]                                                       │ [MOCK PROCESS]
+       ▼                                                                  ▼
+┌───────────────────────────┐      [DATA IS WITNESS]         ┌───────────────────────────────────┐
+│ Data: $10M Revenue        │      (NEVER EXPOSED)           │ Proof Logic:                      │
+│ Claim: Revenue > $5M      │─────────────────────────────▶│ Is (Revenue > $5M)? = TRUE        │
+└───────────────────────────┘                              └───────────────────────────────────┘
+                                                                             │
+                                                                             │ [OUTPUT: PUBLIC PROOF]
+                                                                             ▼
+                                                               ┌───────────────────────────┐
+                                                               │ ZK Proof (Cryptographic)  │
+                                                               │ (e.g., Bulletproof/STARK) │
+                                                               └───────────────────────────┘
+                                                                             │
+                                                                             │ [PROOF SUBMISSION]
+                                                                             ▼
+┌──────────────────────────────┐ ┌────────────────────────────┐ ┌───────────────────────────────────────┐
+│ D. MIDNIGHT NETWORK LAYER    │ │ E. Compact Smart Contract  │─▶│ F. IMMUTABLE ATTESTATION RECORD       │
+│ (Architecture: Blockchain)   │─▶│ (Verifies Proof's Validity)│─▶│ (Status: VALID)                       │
+└──────────────────────────────┘ └────────────────────────────┘ └───────────────────────────────────────┘
+                                                                               │
+                                                                               │ [STATUS QUERY]
+                                                                               ▼
+┌──────────────────────────────┐ ┌────────────────────────────┐ ┌───────────────────────────────────────┐
+│ G. VERIFIER FRONTEND APPS    │ │ H. Vite.js Dashboard       │ │ MOCK OUTPUT:                          │
+│ (Architecture: Presentation) │─▶│ (Auditor/Regulator View)   │─▶│ Claim ID: #78345                      │
+└──────────────────────────────┘ └────────────────────────────┘ │ **Verified Status: TRUE** (Private Data Hidden)│
+                                                                └───────────────────────────────────────┘
