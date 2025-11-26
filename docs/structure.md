@@ -1,0 +1,37 @@
+universal-zk-verifier/
+├── prover/
+│   ├── Cargo.toml
+│   ├── src/
+│   │   ├── main.rs           # CLI: keygen, prove, export-vk
+│   │   ├── circuits/
+│   │   │   ├── mod.rs
+│   │   │   └── square.rs     # sample primitive circuit
+│   │   └── lib.rs
+│   └── README.md
+│
+├── prover-service/          # Rust microservice (actix / tonic)
+│   ├── Cargo.toml
+│   ├── src/main.rs
+│   └── config/
+│
+├── verifier-generator/      # clone of IOHK repo (git submodule recommended)
+│   └── plutus-halo2-verifier-gen/  # actual repo (add as submodule)
+│
+├── onchain/
+│   ├── ZKValidator.cabal
+│   ├── src/
+│   │   └── ZKValidator.hs    # wrapper contract (Haskell)
+│   └── README.md
+│
+├── offchain-api/
+│   ├── package.json
+│   ├── src/
+│   │   └── index.ts          # minimal API example
+│   └── README.md
+│
+├── infra/
+│   ├── k8s/                  # deployment manifests
+│   ├── terraform/            # optional provers + HSM config
+│   └── ci/                   # GitHub Actions / GitLab pipelines
+│
+└── README.md
