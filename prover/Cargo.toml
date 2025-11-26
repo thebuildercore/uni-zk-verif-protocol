@@ -1,0 +1,17 @@
+[package]
+name = "universal-zk-verifier"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+halo2_proofs = { git = "https://github.com/privacy-scaling-explorations/halo2.git", tag = "v2022_10_22" }
+halo2curves  = { git = "https://github.com/privacy-scaling-explorations/halo2curves.git", tag = "v2022_10_22" }
+
+rand = "0.8"
+bincode = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
