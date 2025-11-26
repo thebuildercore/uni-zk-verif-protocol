@@ -1,0 +1,12 @@
+[workspace]
+members = ["halo2-circuits", "verifier-gen"]
+
+[package]
+name = "halo2_circuits"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+halo2_proofs = "0.1"  # use correct version
+ff = "0.11"
+group = "0.10"
