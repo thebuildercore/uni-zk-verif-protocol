@@ -246,6 +246,7 @@ Then provide matching public input during verification.
 - [ZK Proofs Explained](https://z.cash/technology/zksnarks/)
 - [Merkle Trees](https://en.wikipedia.org/wiki/Merkle_tree)
 
+## Note: The project is progressively under progress and circuits are under development
 ## License
 
 MIT
