@@ -40,7 +40,7 @@ universal-zk-verifier/
 
 ```bash
 # Clone the repository
-git clone <your-repo>
+git clone <https://github.com/thebuildercore/uni-zk-verif-protocol>
 cd universal-zk-verifier
 
 # Build the project
