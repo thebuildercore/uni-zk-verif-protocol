@@ -32,7 +32,7 @@ universal-zk-verifier/
 │   ├── src/main.rs
 │   └── config/
 │
-├── verifier-generator/      # clone of IOHK repo (git submodule recommended)
+├── verifier-generator/      # clone of IOHK repo (git submodule)
 │   └── plutus-halo2-verifier-gen/  # actual repo (add as submodule)
 │
 ├── onchain/
@@ -44,12 +44,12 @@ universal-zk-verifier/
 ├── offchain-api/
 │   ├── package.json
 │   ├── src/
-│   │   └── index.ts          # minimal API example
+│   │   └── index.ts          # minimal API 
 │   └── README.md
 │
 ├── infra/
 │   ├── k8s/                  # deployment manifests
-│   ├── terraform/            # optional provers + HSM config
+│   ├── terraform/            # provers + HSM config
 │   └── ci/                   # GitHub Actions / GitLab pipelines
 │
 └── README.md
