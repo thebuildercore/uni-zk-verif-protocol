@@ -1,10 +1,11 @@
-          # Universal Zero-Knowledge Verifier
+# Universal Zero-Knowledge Verifier
+---
 
 A production-ready ZK system using Halo2 that verifies:
 1. **Age ≥ 18** (range proof) 
 2. **Document hash verification** (commitment check)
 3. **Merkle membership proof** (enterprise database proof)
- # supports age = 18 proof as of 28-11-2025
+ supports age = 18 proof as of 28-11-2025
 ## Project Structure
 
 ```
